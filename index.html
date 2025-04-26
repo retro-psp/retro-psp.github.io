@@ -6,74 +6,154 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Retro PSP Polska</title>
     <style>
+        /* Globalne ustawienia */
         body {
-            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #111;
+            font-family: 'Arial', sans-serif;
+            background-color: #1c1c1c;
             color: #fff;
+            overflow-x: hidden;
         }
 
+        h1, h2, h3 {
+            font-family: 'Arial', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        /* Animowane tło */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff5722, #03a9f4, #4caf50);
+            background-size: 300% 300%;
+            animation: gradientAnimation 10s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Nagłówek z logo */
         header {
-            background: linear-gradient(135deg, #36d7b7, #2980b9);
-            padding: 20px 0;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 40px 20px;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
         }
 
-        header h1 {
-            font-size: 3rem;
-            letter-spacing: 2px;
+        header img {
+            max-width: 300px;
+            height: auto;
+            transition: transform 0.3s ease;
         }
 
+        header img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Nawigacja - menu */
         nav {
+            background-color: rgba(0, 0, 0, 0.8);
             display: flex;
             justify-content: center;
-            gap: 30px;
             padding: 15px;
-            background-color: #2c3e50;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         nav a {
             text-decoration: none;
             color: #fff;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            padding: 12px 25px;
+            margin: 0 10px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         nav a:hover {
-            color: #f39c12;
+            background-color: #ff5722;
+            transform: scale(1.1);
         }
 
+        /* Treść strony */
         .content {
-            padding: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 30px 10%;
+            background-color: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            margin-top: 20px;
+            border-radius: 10px;
+            transition: all 0.5s ease;
         }
 
         .section-title {
             font-size: 2.5rem;
-            color: #f39c12;
-            margin-bottom: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ff5722;
         }
 
         .card {
-            background: #34495e;
+            background-color: rgba(33, 33, 33, 0.9);
             padding: 20px;
-            margin: 10px 0;
+            margin-bottom: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
         }
 
         .card h2 {
             font-size: 1.8rem;
-            color: #f39c12;
+            color: #ff5722;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Animacja przycisków */
+        .button {
+            display: inline-block;
+            background: #ff5722;
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #f44336;
+            transform: translateY(-3px);
         }
 
         footer {
-            background: #2c3e50;
+            background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
             text-align: center;
             color: #fff;
@@ -86,76 +166,73 @@
 
         /* Responsywność */
         @media screen and (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
+            header img {
+                max-width: 180px;
             }
 
-            nav {
-                flex-direction: column;
-                gap: 15px;
+            header h1 {
+                font-size: 2.5rem;
             }
 
             nav a {
-                font-size: 1rem;
+                font-size: 1.2rem;
+                padding: 10px 20px;
             }
 
             .content {
                 padding: 20px;
+                margin-top: 10px;
+            }
+
+            .section-title {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Retro PSP Polska</h1>
-</header>
+    <div class="background"></div>
 
-<nav>
-    <a href="#home">Strona Główna</a>
-    <a href="#recenzje">Recenzje</a>
-    <a href="#poradniki">Poradniki</a>
-    <a href="#emulatory">Emulatory</a>
-    <a href="#kontakt">Kontakt</a>
-</nav>
+    <header>
+        <!-- Miejsce na logo z przezroczystym tłem -->
+        <img src="https://example.com/retro-psp-logo.png" alt="Retro PSP Polska Logo">
+    </header>
 
-<div class="content">
-    <section id="home">
-        <h2 class="section-title">Witaj na Retro PSP Polska!</h2>
-        <div class="card">
-            <h2>O PSP</h2>
-            <p>PlayStation Portable (PSP) to jedna z najpopularniejszych konsol przenośnych, która zdobyła serca graczy na całym świecie. W Retro PSP Polska będziemy dzielić się recenzjami, poradnikami i ciekawostkami związanymi z PSP.</p>
-        </div>
-    </section>
+    <nav>
+        <a href="#home">Strona Główna</a>
+        <a href="#recenzje">Recenzje</a>
+        <a href="#poradniki">Poradniki</a>
+        <a href="#emulatory">Emulatory</a>
+        <a href="#kontakt">Kontakt</a>
+    </nav>
 
-    <section id="recenzje">
-        <h2 class="section-title">Recenzje Gier</h2>
-        <div class="card">
-            <h2>Gran Turismo</h2>
-            <p>Gran Turismo na PSP to wyjątkowe doświadczenie, które przybliża gracza do realizmu wyścigów. Poznaj szczegóły tej legendarnej gry.</p>
-        </div>
-        <div class="card">
-            <h2>God of War: Chains of Olympus</h2>
-            <p>God of War na PSP to jeden z najlepszych portów gry akcji. Przeczytaj naszą recenzję tej epickiej produkcji.</p>
-        </div>
-    </section>
+    <div class="content">
+        <section id="home">
+            <h2 class="section-title">Witaj na Retro PSP Polska!</h2>
+            <div class="card">
+                <h2>O PSP</h2>
+                <p>PlayStation Portable (PSP) to konsola, która zmieniła rynek gier mobilnych. Dzięki jej potężnemu procesorowi i bogatej bibliotece gier stała się jednym z najlepszych handheldów w historii. Na Retro PSP Polska znajdziesz wszystko o tej konsoli!</p>
+            </div>
+            <a href="#recenzje" class="button">Zobacz Recenzje</a>
+        </section>
 
-    <section id="poradniki">
-        <h2 class="section-title">Poradniki i Homebrew</h2>
-        <div class="card">
-            <h2>Instalacja Emulatorów</h2>
-            <p>Dowiedz się, jak zainstalować emulatory PSP na innych platformach, aby móc grać w swoje ulubione gry wszędzie!</p>
-        </div>
-        <div class="card">
-            <h2>Homebrew na PSP</h2>
-            <p>Twórz własne aplikacje i gry na PSP dzięki homebrew. Oto jak rozpocząć swoją przygodę z programowaniem na PSP.</p>
-        </div>
-    </section>
-</div>
+        <section id="recenzje">
+            <h2 class="section-title">Recenzje Gier</h2>
+            <div class="card">
+                <h2>Gran Turismo</h2>
+                <p>Gran Turismo na PSP to wyjątkowa odsłona serii wyścigów. Zaskakująca grafika i dopracowany gameplay sprawiają, że jest to jeden z najlepszych tytułów na PSP.</p>
+            </div>
+            <div class="card">
+                <h2>God of War: Chains of Olympus</h2>
+                <p>God of War na PSP to świetna adaptacja kultowej serii, która zachwyca zarówno fabułą, jak i dynamiczną walką. Dowiedz się, co wyróżnia ten tytuł na konsoli przenośnej!</p>
+            </div>
+        </section>
+    </div>
 
-<footer>
-    <p>© 2025 Retro PSP Polska - Wszystkie prawa zastrzeżone</p>
-</footer>
+    <footer>
+        <p>© 2025 Retro PSP Polska - Wszystkie prawa zastrzeżone</p>
+    </footer>
 
 </body>
 </html>
