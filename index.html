@@ -1,134 +1,247 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Retro PSP Polska</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background: #001f3d; /* Tło przypominające PlayStation */
-      color: #ffffff;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro PSP Polska</title>
+    <style>
+        /* Resetowanie marginesów i paddingów */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* Animowane tło */
-    .background {
-      background: url('psp_background.gif') no-repeat center center fixed;
-      background-size: cover;
-      height: 100vh;
-      animation: slide 30s linear infinite;
-    }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #0c1c2a;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-    /* Efekty skalowania przycisków */
-    button {
-      background-color: #0062cc;
-      color: #fff;
-      border: none;
-      border-radius: 12px; /* Zaokrąglone rogi */
-      padding: 15px 30px;
-      margin: 10px;
-      font-size: 18px;
-      cursor: pointer;
-      transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    }
+        /* Nagłówek */
+        .header {
+            background: linear-gradient(135deg, #002e5b, #0066b3);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
 
-    /* Efekt przycisku najechania */
-    button:hover {
-      transform: scale(1.1); /* Powiększenie przycisku */
-      background-color: #004bb3;
-    }
+        .header img {
+            width: 250px;
+            max-width: 100%;
+            border-radius: 8px;
+        }
 
-    button:active {
-      transform: scale(1.05); /* Lekki efekt podczas kliknięcia */
-      background-color: #003380;
-    }
+        /* Sekcja z tłem */
+        .background {
+            background: url('psp_background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            z-index: 1;
+        }
 
-    /* Główna sekcja z logo */
-    .header {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+        .overlay {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 80%;
+            text-align: center;
+            z-index: 2;
+        }
 
-    .header img {
-      width: 300px; /* Możesz dostosować rozmiar logo */
-      animation: logoAnimation 2s ease-in-out infinite;
-    }
+        .overlay h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
 
-    /* Animacja dla logo */
-    @keyframes logoAnimation {
-      0% {
-        opacity: 0.7;
-        transform: translateY(-20px);
-      }
-      50% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      100% {
-        opacity: 0.7;
-        transform: translateY(20px);
-      }
-    }
+        /* Nawigacja */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            margin-top: 20px;
+        }
 
-    /* Sekcja z informacjami */
-    .content {
-      background-color: #000;
-      opacity: 0.8;
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 20px;
-      width: 90%;
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: background 0.3s ease, transform 0.3s ease;
+            border-radius: 5px;
+        }
 
-    h1, p {
-      text-align: center;
-      color: #fff;
-    }
+        nav a:hover {
+            background-color: #0066b3;
+            transform: scale(1.1);
+        }
 
-    /* Responsywność */
-    @media screen and (max-width: 768px) {
-      body {
-        font-size: 14px;
-      }
-      button {
-        padding: 12px 25px;
-      }
-      .header img {
-        width: 250px;
-      }
-    }
-  </style>
+        /* Sekcje treści */
+        .section {
+            padding: 50px 10%;
+            background-color: #0c1c2a;
+            text-align: center;
+            border-top: 2px solid #0066b3;
+            margin: 20px 0;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #ddd;
+        }
+
+        /* Przycisk z efektem najechania */
+        .button {
+            background-color: #0066b3;
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1.4rem;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.3s ease;
+            margin-top: 20px; /* Dodanie marginesu od tekstu */
+            display: inline-block; /* Sprawia, że przycisk jest traktowany jako blok, ale nie zabiera pełnej szerokości */
+        }
+
+        .button:hover {
+            background-color: #005b99;
+            transform: scale(1.05);
+        }
+
+        /* Stopka */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #0c1c2a;
+            color: #fff;
+            font-size: 1rem;
+            border-top: 2px solid #0066b3;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #0066b3;
+        }
+
+        /* Responsywność */
+        @media screen and (max-width: 768px) {
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .button {
+                font-size: 1.2rem;
+                padding: 10px 20px;
+            }
+        }
+
+    </style>
 </head>
 <body>
-  <div class="background">
+
     <div class="header">
-      <!-- Logo z transparentem -->
-      <img src="logo_transparent.png" alt="Retro PSP Polska">
+        <img src="logo_transparent.png" alt="Retro PSP Polska">
     </div>
 
-    <div class="content">
-      <h1>Witaj na Retro PSP Polska!</h1>
-      <p>Twoje centrum informacji o PSP i retro grach. Znajdziesz tutaj recenzje, ciekawostki, poradniki i wiele więcej!</p>
-
-      <!-- Przycisk nawigacyjny -->
-      <div style="text-align: center;">
-        <button onclick="window.location.href='#info'">Poznaj naszą inicjatywę</button>
-      </div>
+    <div class="background">
+        <div class="overlay">
+            <h1>Witaj w Retro PSP Polska!</h1>
+            <p>Twój punkt startowy dla pasjonatów PSP i retro gier. Dowiedz się więcej o tej legendarnej konsoli!</p>
+            <a href="#info" class="button">Poznaj Naszą Inicjatywę</a>
+        </div>
     </div>
-  </div>
 
-  <!-- Sekcja z informacjami -->
-  <div class="content" id="info">
-    <h1>Ciekawostki o PSP</h1>
-    <p>PlayStation Portable to jedna z najbardziej kultowych konsol przenośnych, która zrewolucjonizowała sposób, w jaki gramy w podróży. Dzięki ogromnej bibliotece gier i możliwością odtwarzania multimediów PSP stało się jednym z najlepszych urządzeń przenośnych swojej ery.</p>
-  </div>
+    <nav>
+        <a href="#info" id="nav-info">Ciekawostki</a>
+        <a href="#review" id="nav-review">Recenzje</a>
+        <a href="#emulator" id="nav-emulator">Emulatory</a>
+    </nav>
+
+    <div class="section" id="info">
+        <h2>Ciekawostki o PSP</h2>
+        <p>PlayStation Portable (PSP) to jedna z najważniejszych konsol przenośnych w historii. Została wydana przez Sony w 2004 roku i była pierwszą konsolą, która pozwalała na odtwarzanie gier w jakości konsolowej na urządzeniu mobilnym.</p>
+    </div>
+
+    <div class="section" id="review">
+        <h2>Recenzje Gier PSP</h2>
+        <p>PSP oferowało mnóstwo świetnych gier, od klasycznych tytułów po nowatorskie produkcje. Sprawdź nasze rekomendacje!</p>
+    </div>
+
+    <div class="section" id="emulator">
+        <h2>Emulatory PSP</h2>
+        <p>Chcesz grać w gry PSP na komputerze? Zobacz, jakie emulatory pozwolą Ci na uruchomienie gier PSP na różnych platformach.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Retro PSP Polska | <a href="https://retro-psp.github.io">Odwiedź naszą stronę</a></p>
+    </footer>
+
+    <script>
+        // Animacja zmiany tła przy przewijaniu
+        window.addEventListener('scroll', function () {
+            const background = document.querySelector('.background');
+            const scrollPosition = window.scrollY;
+
+            // Zmienia tło w zależności od przewiniętej strony
+            if (scrollPosition > 100) {
+                background.style.backgroundPosition = 'center ' + (scrollPosition * 0.5) + 'px';
+            } else {
+                background.style.backgroundPosition = 'center 0px';
+            }
+        });
+
+        // Interaktywne efekty przy najechaniu na linki
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('mouseenter', function () {
+                link.style.color = '#0066b3';
+            });
+            link.addEventListener('mouseleave', function () {
+                link.style.color = '#fff';
+            });
+        });
+
+        // Zmiana treści w sekcji
+        const infoSection = document.querySelector('#info');
+        const reviewSection = document.querySelector('#review');
+        const emulatorSection = document.querySelector('#emulator');
+
+        document.querySelector('#nav-info').addEventListener('click', () => {
+            infoSection.style.display = 'block';
+            reviewSection.style.display = 'none';
+            emulatorSection.style.display = 'none';
+        });
+        document.querySelector('#nav-review').addEventListener('click', () => {
+            infoSection.style.display = 'none';
+            reviewSection.style.display = 'block';
+            emulatorSection.style.display = 'none';
+        });
+        document.querySelector('#nav-emulator').addEventListener('click', () => {
+            infoSection.style.display = 'none';
+            reviewSection.style.display = 'none';
+            emulatorSection.style.display = 'block';
+        });
+    </script>
 </body>
 </html>
