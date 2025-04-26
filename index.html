@@ -3,30 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retro PSP Polska</title>
+    <title>Informacje o PSP | Retro PSP Polska</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        /* Resetowanie marginesów i paddingów */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* Podstawowy styl strony */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #0c1c2a;
             color: #fff;
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
-        /* Nagłówek */
         .header {
             background: linear-gradient(135deg, #002e5b, #0066b3);
             padding: 20px 0;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            position: relative;
         }
 
         .header img {
@@ -35,58 +27,6 @@
             border-radius: 8px;
         }
 
-        /* Sekcja z tłem */
-        .background {
-            background: url('psp_background.jpg') no-repeat center center fixed;
-            background-size: cover;
-            position: relative;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-            z-index: 1;
-        }
-
-        .overlay {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 40px;
-            border-radius: 10px;
-            max-width: 80%;
-            text-align: center;
-            z-index: 2;
-        }
-
-        .overlay h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        /* Nawigacja */
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            margin-top: 20px;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 20px;
-            transition: background 0.3s ease, transform 0.3s ease;
-            border-radius: 5px;
-        }
-
-        nav a:hover {
-            background-color: #0066b3;
-            transform: scale(1.1);
-        }
-
-        /* Sekcje treści */
         .section {
             padding: 50px 10%;
             background-color: #0c1c2a;
@@ -106,7 +46,6 @@
             color: #ddd;
         }
 
-        /* Przycisk z efektem najechania */
         .button {
             background-color: #0066b3;
             color: #fff;
@@ -114,9 +53,8 @@
             font-size: 1.4rem;
             border-radius: 30px;
             text-decoration: none;
+            display: inline-block;
             transition: background 0.3s ease, transform 0.3s ease;
-            margin-top: 20px; /* Dodanie marginesu od tekstu */
-            display: inline-block; /* Sprawia, że przycisk jest traktowany jako blok, ale nie zabiera pełnej szerokości */
         }
 
         .button:hover {
@@ -124,7 +62,6 @@
             transform: scale(1.05);
         }
 
-        /* Stopka */
         footer {
             text-align: center;
             padding: 20px;
@@ -144,18 +81,26 @@
             color: #0066b3;
         }
 
-        /* Responsywność */
-        @media screen and (max-width: 768px) {
-            .section h2 {
-                font-size: 2rem;
-            }
-
-            .button {
-                font-size: 1.2rem;
-                padding: 10px 20px;
-            }
+        /* Styl przycisku do zmiany nastroju */
+        .mood-switcher {
+            margin-top: 30px;
+            text-align: center;
         }
 
+        /* Styl przycisku otwierającego info.html */
+        .info-button {
+            background-color: #f1c40f;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+
+        .info-button:hover {
+            background-color: #f39c12;
+        }
     </style>
 </head>
 <body>
@@ -164,84 +109,33 @@
         <img src="logo_transparent.png" alt="Retro PSP Polska">
     </div>
 
-    <div class="background">
-        <div class="overlay">
-            <h1>Witaj w Retro PSP Polska!</h1>
-            <p>Twój punkt startowy dla pasjonatów PSP i retro gier. Dowiedz się więcej o tej legendarnej konsoli!</p>
-            <a href="info.html" class="button">Poznaj Naszą Inicjatywę</a>
-        </div>
+    <div class="section" id="psp-info">
+        <h2>Wszystko o PSP!</h2>
+        <p>PlayStation Portable (PSP) to jedna z najważniejszych konsol przenośnych w historii. Została wydana przez Sony w 2004 roku i zrewolucjonizowała rynek gier mobilnych. Z jej pomocą gracze mogli przenosić swoje ulubione gry na urządzenia przenośne z jakością znaną z konsol stacjonarnych.</p>
+        <p>PSP stało się kultowym urządzeniem, które na stałe wpisało się w historię gier wideo. Mimo że Sony zakończyło wsparcie tej konsoli, jej wpływ na rynek gier mobilnych jest niezatarte.</p>
+        <a href="#more-info" class="button">Dowiedz się więcej</a>
     </div>
 
-    <nav>
-        <a href="#info" id="nav-info">Ciekawostki</a>
-        <a href="#review" id="nav-review">Recenzje</a>
-        <a href="#emulator" id="nav-emulator">Emulatory</a>
-    </nav>
-
-    <div class="section" id="info">
-        <h2>Ciekawostki o PSP</h2>
-        <p>PlayStation Portable (PSP) to jedna z najważniejszych konsol przenośnych w historii. Została wydana przez Sony w 2004 roku i była pierwszą konsolą, która pozwalała na odtwarzanie gier w jakości konsolowej na urządzeniu mobilnym.</p>
+    <!-- Przycisk do wyświetlania info.html -->
+    <div class="section">
+        <button class="info-button" onclick="loadInfoPage()">Poznaj Naszą Inicjatywę</button>
     </div>
 
-    <div class="section" id="review">
-        <h2>Recenzje Gier PSP</h2>
-        <p>PSP oferowało mnóstwo świetnych gier, od klasycznych tytułów po nowatorskie produkcje. Sprawdź nasze rekomendacje!</p>
-    </div>
-
-    <div class="section" id="emulator">
-        <h2>Emulatory PSP</h2>
-        <p>Chcesz grać w gry PSP na komputerze? Zobacz, jakie emulatory pozwolą Ci na uruchomienie gier PSP na różnych platformach.</p>
+    <div class="section" id="more-info">
+        <h2>Więcej informacji o PSP</h2>
+        <p>PSP było pierwszym urządzeniem, które oferowało odtwarzanie gier w 3D na przenośnym ekranie LCD, co stanowiło ogromny przełom w porównaniu do innych przenośnych konsol dostępnych na rynku w tamtym czasie. Konsola oferowała również możliwość odtwarzania filmów, muzyki i korzystania z aplikacji multimedialnych, co czyniło ją wszechstronnym urządzeniem do rozrywki.</p>
+        <p>Na PSP pojawiły się takie kultowe gry jak: <b>Gran Turismo, God of War: Chains of Olympus, Metal Gear Solid: Peace Walker</b> i wiele innych.</p>
     </div>
 
     <footer>
-        <p>&copy; 2025 Retro PSP Polska | <a href="https://retro-psp.github.io">Odwiedź naszą stronę</a></p>
+        <p>© 2025 Retro PSP Polska - Wszelkie prawa zastrzeżone | <a href="https://retro-psp.github.io" target="_blank">Strona główna</a></p>
     </footer>
 
+    <!-- Skrypt do załadowania strony info.html po kliknięciu przycisku -->
     <script>
-        // Animacja zmiany tła przy przewijaniu
-        window.addEventListener('scroll', function () {
-            const background = document.querySelector('.background');
-            const scrollPosition = window.scrollY;
-
-            // Zmienia tło w zależności od przewiniętej strony
-            if (scrollPosition > 100) {
-                background.style.backgroundPosition = 'center ' + (scrollPosition * 0.5) + 'px';
-            } else {
-                background.style.backgroundPosition = 'center 0px';
-            }
-        });
-
-        // Interaktywne efekty przy najechaniu na linki
-        const navLinks = document.querySelectorAll('nav a');
-        navLinks.forEach(link => {
-            link.addEventListener('mouseenter', function () {
-                link.style.color = '#0066b3';
-            });
-            link.addEventListener('mouseleave', function () {
-                link.style.color = '#fff';
-            });
-        });
-
-        // Zmiana treści w sekcji
-        const infoSection = document.querySelector('#info');
-        const reviewSection = document.querySelector('#review');
-        const emulatorSection = document.querySelector('#emulator');
-
-        document.querySelector('#nav-info').addEventListener('click', () => {
-            infoSection.style.display = 'block';
-            reviewSection.style.display = 'none';
-            emulatorSection.style.display = 'none';
-        });
-        document.querySelector('#nav-review').addEventListener('click', () => {
-            infoSection.style.display = 'none';
-            reviewSection.style.display = 'block';
-            emulatorSection.style.display = 'none';
-        });
-        document.querySelector('#nav-emulator').addEventListener('click', () => {
-            infoSection.style.display = 'none';
-            reviewSection.style.display = 'none';
-            emulatorSection.style.display = 'block';
-        });
+        function loadInfoPage() {
+            window.location.href = 'info.html'; // Przekierowanie na stronę info.html
+        }
     </script>
 </body>
 </html>
