@@ -2,10 +2,160 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Retro PSP Polska</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: #fff;
+        }
+
+        header {
+            background: linear-gradient(135deg, #36d7b7, #2980b9);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px;
+            background-color: #2c3e50;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #f39c12;
+        }
+
+        .content {
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #f39c12;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: #34495e;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            font-size: 1.8rem;
+            color: #f39c12;
+        }
+
+        footer {
+            background: #2c3e50;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        footer p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Responsywność */
+        @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 1rem;
+            }
+
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Witaj na Retro PSP Polska!</h1>
-    <p>Strona w budowie 🚧</p>
+
+<header>
+    <h1>Retro PSP Polska</h1>
+</header>
+
+<nav>
+    <a href="#home">Strona Główna</a>
+    <a href="#recenzje">Recenzje</a>
+    <a href="#poradniki">Poradniki</a>
+    <a href="#emulatory">Emulatory</a>
+    <a href="#kontakt">Kontakt</a>
+</nav>
+
+<div class="content">
+    <section id="home">
+        <h2 class="section-title">Witaj na Retro PSP Polska!</h2>
+        <div class="card">
+            <h2>O PSP</h2>
+            <p>PlayStation Portable (PSP) to jedna z najpopularniejszych konsol przenośnych, która zdobyła serca graczy na całym świecie. W Retro PSP Polska będziemy dzielić się recenzjami, poradnikami i ciekawostkami związanymi z PSP.</p>
+        </div>
+    </section>
+
+    <section id="recenzje">
+        <h2 class="section-title">Recenzje Gier</h2>
+        <div class="card">
+            <h2>Gran Turismo</h2>
+            <p>Gran Turismo na PSP to wyjątkowe doświadczenie, które przybliża gracza do realizmu wyścigów. Poznaj szczegóły tej legendarnej gry.</p>
+        </div>
+        <div class="card">
+            <h2>God of War: Chains of Olympus</h2>
+            <p>God of War na PSP to jeden z najlepszych portów gry akcji. Przeczytaj naszą recenzję tej epickiej produkcji.</p>
+        </div>
+    </section>
+
+    <section id="poradniki">
+        <h2 class="section-title">Poradniki i Homebrew</h2>
+        <div class="card">
+            <h2>Instalacja Emulatorów</h2>
+            <p>Dowiedz się, jak zainstalować emulatory PSP na innych platformach, aby móc grać w swoje ulubione gry wszędzie!</p>
+        </div>
+        <div class="card">
+            <h2>Homebrew na PSP</h2>
+            <p>Twórz własne aplikacje i gry na PSP dzięki homebrew. Oto jak rozpocząć swoją przygodę z programowaniem na PSP.</p>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>© 2025 Retro PSP Polska - Wszystkie prawa zastrzeżone</p>
+</footer>
+
 </body>
 </html>
