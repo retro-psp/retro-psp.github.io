@@ -3,174 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Poznaj historię, gry i modyfikacje związane z konsolą PSP - Retro PSP Polska.">
+    <meta name="description" content="Informacje o PlayStation Portable (PSP) - historia, gry, emulatory i społeczność Homebrew.">
+    <meta name="keywords" content="PSP, PlayStation Portable, Retro PSP, historia PSP, emulatory PSP, gry PSP, Homebrew PSP">
+    <meta name="author" content="Retro PSP Polska">
+    <meta property="og:title" content="Informacje o PSP | Retro PSP Polska">
+    <meta property="og:description" content="Poznaj historię i najlepsze gry na PSP. Odkryj emulatory i społeczność Homebrew na Retro PSP Polska!">
+    <meta property="og:image" content="retro-psp-logo.png">
+    <meta property="og:url" content="https://retro-psp.github.io/info.html">
+    <meta name="twitter:card" content="summary_large_image">
     <title>Informacje o PSP | Retro PSP Polska</title>
     <style>
-        /* Podstawowy styl strony */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #0c1c2a;
             color: #fff;
-            line-height: 1.6;
             margin: 0;
+            line-height: 1.6;
         }
-
         .header {
             background: linear-gradient(135deg, #002e5b, #0066b3);
-            padding: 20px 0;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            padding: 20px;
         }
-
         .header img {
-            width: 250px;
-            max-width: 100%;
+            width: 200px;
             border-radius: 8px;
         }
-
         .section {
-            padding: 50px 10%;
-            background-color: #0c1c2a;
+            padding: 40px 10%;
             text-align: center;
-            border-top: 2px solid #0066b3;
-            margin: 20px 0;
         }
-
         .section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
-
         .section p {
             font-size: 1.2rem;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             color: #ddd;
         }
-
         .button {
             background-color: #0066b3;
             color: #fff;
-            padding: 15px 30px;
-            font-size: 1.4rem;
-            border-radius: 30px;
-            text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #005b99;
-            transform: scale(1.05);
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #0c1c2a;
-            color: #fff;
-            font-size: 1rem;
-            border-top: 2px solid #0066b3;
-        }
-
-        footer a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        footer a:hover {
-            color: #0066b3;
-        }
-
-        .mood-button {
-            background-color: #f1c40f;
-            color: #fff;
             padding: 10px 20px;
+            text-decoration: none;
             border-radius: 5px;
-            font-size: 1.2rem;
-            border: none;
-            cursor: pointer;
             transition: background 0.3s ease;
         }
-
-        .mood-button:hover {
-            background-color: #f39c12;
+        .button:hover {
+            background-color: #005b99;
         }
-
-        .mood-positive {
-            background-color: #2ecc71;
-        }
-
-        .mood-positive:hover {
-            background-color: #27ae60;
-        }
-
-        .mood-negative {
-            background-color: #e74c3c;
-        }
-
-        .mood-negative:hover {
-            background-color: #c0392b;
-        }
-
-        .mood-switcher {
-            margin-top: 30px;
+        footer {
+            background-color: #002e5b;
+            padding: 10px;
             text-align: center;
-        }
-
-        @media screen and (max-width: 768px) {
-            .section h2 {
-                font-size: 2rem;
-            }
-
-            .button {
-                font-size: 1.2rem;
-                padding: 10px 20px;
-            }
+            color: #fff;
         }
     </style>
 </head>
 <body>
+    <header class="header">
+        <img src="retro-psp-logo.png" alt="Logo Retro PSP Polska">
+        <h1>Informacje o PSP</h1>
+    </header>
 
-    <div class="header">
-        <img src="retro-psp-logo.png" alt="Retro PSP Polska Logo">
-    </div>
-
-    <div class="section" id="psp-info">
-        <h2>Wszystko o PSP!</h2>
-        <p>PlayStation Portable (PSP) to jedna z najważniejszych konsol przenośnych w historii. Została wydana przez Sony w 2004 roku i zrewolucjonizowała rynek gier mobilnych.</p>
-        <p>PSP stało się kultowym urządzeniem, które na stałe wpisało się w historię gier wideo. Mimo że Sony zakończyło wsparcie tej konsoli, jej wpływ na rynek gier mobilnych jest niezaprzeczalny.</p>
-        <a href="#more-info" class="button">Dowiedz się więcej</a>
-    </div>
-
-    <div class="mood-switcher">
-        <button class="mood-button mood-positive" onclick="changeMood('positive')">Pozytywny nastrój</button>
-        <button class="mood-button mood-negative" onclick="changeMood('negative')">Negatywny nastrój</button>
-    </div>
-
-    <div class="section" id="more-info">
-        <h2>Więcej informacji o PSP</h2>
-        <p>PSP było pierwszym urządzeniem, które oferowało odtwarzanie gier w 3D na przenośnym ekranie LCD, co stanowiło ogromny przełom w porównaniu do innych przenośnych konsol.</p>
-        <p>Na PSP pojawiły się takie kultowe gry jak: <b>Gran Turismo, God of War: Chains of Olympus, Metal Gear Solid: Peace Walker</b> i wiele innych.</p>
-        <a href="#review" class="button">Zobacz recenzje gier PSP</a>
-    </div>
+    <main>
+        <section class="section">
+            <h2>Historia PSP</h2>
+            <p>PlayStation Portable (PSP) to kultowa konsola przenośna wydana przez Sony w 2004 roku, która zrewolucjonizowała rynek gier mobilnych.</p>
+        </section>
+        <section class="section">
+            <h2>Najlepsze gry na PSP</h2>
+            <p>Odkryj takie tytuły jak: <b>God of War: Chains of Olympus</b>, <b>Gran Turismo</b>, czy <b>Metal Gear Solid: Peace Walker</b>.</p>
+        </section>
+    </main>
 
     <footer>
-        <p>© 2025 Retro PSP Polska - Wszelkie prawa zastrzeżone | <a href="https://retro-psp.github.io" target="_blank">Strona główna</a></p>
+        <p>© 2025 Retro PSP Polska - Wszystkie prawa zastrzeżone</p>
     </footer>
-
-    <script>
-        function changeMood(mood) {
-            const body = document.body;
-            if (mood === 'positive') {
-                body.style.backgroundColor = '#2ecc71'; // Zielony kolor
-                body.style.color = '#fff';
-            } else if (mood === 'negative') {
-                body.style.backgroundColor = '#e74c3c'; // Czerwony kolor
-                body.style.color = '#fff';
-            }
-        }
-    </script>
-
 </body>
 </html>
