@@ -4,17 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Poznaj historię, gry i modyfikacje związane z konsolą PSP - Retro PSP Polska.">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Informacje o PSP | Retro PSP Polska</title>
-    <link rel="stylesheet" href="style.css">
     <style>
-        /* Przeniesienie stylów CSS do zewnętrznego pliku (style.css) zalecane */
+        /* Podstawowy styl strony */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #0c1c2a;
+            color: #fff;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #002e5b, #0066b3);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .header img {
+            width: 250px;
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .section {
+            padding: 50px 10%;
+            background-color: #0c1c2a;
+            text-align: center;
+            border-top: 2px solid #0066b3;
+            margin: 20px 0;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #ddd;
+        }
+
+        .button {
+            background-color: #0066b3;
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1.4rem;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #005b99;
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #0c1c2a;
+            color: #fff;
+            font-size: 1rem;
+            border-top: 2px solid #0066b3;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #0066b3;
+        }
+
+        .mood-button {
+            background-color: #f1c40f;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .mood-button:hover {
+            background-color: #f39c12;
+        }
+
+        .mood-positive {
+            background-color: #2ecc71;
+        }
+
+        .mood-positive:hover {
+            background-color: #27ae60;
+        }
+
+        .mood-negative {
+            background-color: #e74c3c;
+        }
+
+        .mood-negative:hover {
+            background-color: #c0392b;
+        }
+
+        .mood-switcher {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 768px) {
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .button {
+                font-size: 1.2rem;
+                padding: 10px 20px;
+            }
+        }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <img src="retro-psp-logo.png" alt="Retro PSP Polska Logo">
+        <img src="retro-psp-polska.png" alt="Retro PSP Polska Logo">
     </div>
 
     <div class="section" id="psp-info">
@@ -36,39 +155,7 @@
         <a href="#review" class="button">Zobacz recenzje gier PSP</a>
     </div>
 
-    <div class="section" id="review">
-        <h2>Recenzje Gier PSP</h2>
-        <p>Gry na PSP oferowały szeroki wybór, od wyścigów po gry akcji, od gier przygodowych po strategie. Oto kilka ulubionych tytułów:</p>
-        <ul>
-            <li><b>Gran Turismo</b> - Niezwykle realistyczna gra wyścigowa, która zaskakiwała jakością grafiki jak na konsolę przenośną.</li>
-            <li><b>God of War: Chains of Olympus</b> - Ekscytująca przygoda Kratosa w mitycznym świecie.</li>
-            <li><b>Metal Gear Solid: Peace Walker</b> - Gra akcji z elementami stealth, która stanowiła prawdziwą perełkę na PSP.</li>
-        </ul>
-        <a href="#emulator" class="button">Sprawdź najlepsze emulatory PSP</a>
-    </div>
-
-    <div class="section" id="emulator">
-        <h2>Najlepsze Emulatory PSP</h2>
-        <p>Jeśli chcesz grać w gry PSP na komputerze, możesz skorzystać z emulatorów, takich jak:</p>
-        <ul>
-            <li><b>PPSSPP</b> - Emulator oferujący doskonałą jakość grafiki i zgodność z wieloma grami.</li>
-            <li><b>JPCSP</b> - Emulator PSP napisany w Javie, który działa na Windows, Linux i MacOS.</li>
-        </ul>
-        <a href="https://www.ppsspp.org/" class="button" target="_blank">Pobierz PPSSPP</a>
-    </div>
-
-    <div class="section" id="homebrew">
-        <h2>Homebrew dla PSP</h2>
-        <p>PSP, mimo że przestało być wspierane przez Sony, ma ogromną społeczność homebrew. Dzięki homebrew, PSP może być wzbogacone o różne aplikacje, gry i modyfikacje.</p>
-        <ul>
-            <li><b>Custom Firmware</b> - Pozwala na uruchamianie aplikacji i gier niezależnych od oficjalnych serwisów Sony.</li>
-            <li><b>PSP Revolution</b> - Gra muzyczna inspirowana serią Dance Dance Revolution.</li>
-            <li><b>iR Shell</b> - Potężne narzędzie umożliwiające uruchamianie różnych aplikacji na PSP.</li>
-        </ul>
-        <a href="#footer" class="button">Wróć do strony głównej</a>
-    </div>
-
-    <footer id="footer">
+    <footer>
         <p>© 2025 Retro PSP Polska - Wszelkie prawa zastrzeżone | <a href="https://retro-psp.github.io" target="_blank">Strona główna</a></p>
     </footer>
 
