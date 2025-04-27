@@ -3,182 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Poznaj historię, gry i modyfikacje związane z konsolą PSP - Retro PSP Polska.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Informacje o PSP | Retro PSP Polska</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Podstawowy styl strony */
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #0c1c2a;
-            color: #fff;
-            line-height: 1.6;
-            transition: background-color 0.5s ease;
-        }
-
-        .header {
-            background: linear-gradient(135deg, #002e5b, #0066b3);
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        .header img {
-            width: 250px;
-            max-width: 100%;
-            border-radius: 8px;
-        }
-
-        .section {
-            padding: 50px 10%;
-            background-color: #0c1c2a;
-            text-align: center;
-            border-top: 2px solid #0066b3;
-            margin: 20px 0;
-            transition: all 0.5s ease;
-        }
-
-        .section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-        }
-
-        .section p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: #ddd;
-        }
-
-        .button {
-            background-color: #0066b3;
-            color: #fff;
-            padding: 15px 30px;
-            font-size: 1.4rem;
-            border-radius: 30px;
-            text-decoration: none;
-            transition: background 0.3s ease, transform 0.3s ease;
-            display: inline-block;
-        }
-
-        .button:hover {
-            background-color: #005b99;
-            transform: scale(1.05);
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #0c1c2a;
-            color: #fff;
-            font-size: 1rem;
-            border-top: 2px solid #0066b3;
-        }
-
-        footer a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        footer a:hover {
-            color: #0066b3;
-        }
-
-        /* Styl dla nastrojów */
-        .mood-button {
-            background-color: #f1c40f;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            border: none;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .mood-button:hover {
-            background-color: #f39c12;
-        }
-
-        .mood-positive {
-            background-color: #2ecc71;
-        }
-
-        .mood-positive:hover {
-            background-color: #27ae60;
-        }
-
-        .mood-negative {
-            background-color: #e74c3c;
-        }
-
-        .mood-negative:hover {
-            background-color: #c0392b;
-        }
-
-        /* Styl przycisku do zmiany nastroju */
-        .mood-switcher {
-            margin-top: 30px;
-            text-align: center;
-        }
-
-        @media screen and (max-width: 768px) {
-            .section h2 {
-                font-size: 2rem;
-            }
-
-            .button {
-                font-size: 1.2rem;
-                padding: 10px 20px;
-            }
-        }
+        /* Przeniesienie stylów CSS do zewnętrznego pliku (style.css) zalecane */
     </style>
 </head>
 <body>
 
     <div class="header">
-        <img src="logo_transparent.png" alt="Retro PSP Polska">
+        <img src="logo_transparent.png" alt="Retro PSP Polska Logo">
     </div>
 
     <div class="section" id="psp-info">
         <h2>Wszystko o PSP!</h2>
-        <p>PlayStation Portable (PSP) to jedna z najważniejszych konsol przenośnych w historii. Została wydana przez Sony w 2004 roku i zrewolucjonizowała rynek gier mobilnych. Z jej pomocą gracze mogli przenosić swoje ulubione gry na urządzenia przenośne z jakością znaną z konsol stacjonarnych.</p>
-        <p>PSP stało się kultowym urządzeniem, które na stałe wpisało się w historię gier wideo. Mimo że Sony zakończyło wsparcie tej konsoli, jej wpływ na rynek gier mobilnych jest niezatarte.</p>
+        <p>PlayStation Portable (PSP) to jedna z najważniejszych konsol przenośnych w historii. Została wydana przez Sony w 2004 roku i zrewolucjonizowała rynek gier mobilnych.</p>
+        <p>PSP stało się kultowym urządzeniem, które na stałe wpisało się w historię gier wideo. Mimo że Sony zakończyło wsparcie tej konsoli, jej wpływ na rynek gier mobilnych jest niezaprzeczalny.</p>
         <a href="#more-info" class="button">Dowiedz się więcej</a>
     </div>
 
-    <!-- Dodanie przycisku zmiany nastroju -->
     <div class="mood-switcher">
         <button class="mood-button mood-positive" onclick="changeMood('positive')">Pozytywny nastrój</button>
         <button class="mood-button mood-negative" onclick="changeMood('negative')">Negatywny nastrój</button>
     </div>
 
-    <!-- JavaScript do zmiany nastroju -->
-    <script>
-        function changeMood(mood) {
-            var body = document.body;
-            if (mood === 'positive') {
-                body.style.backgroundColor = '#2ecc71'; // Zielony kolor dla pozytywnego nastroju
-                body.style.color = '#fff'; // Kolor tekstu na biały
-            } else if (mood === 'negative') {
-                body.style.backgroundColor = '#e74c3c'; // Czerwony kolor dla negatywnego nastroju
-                body.style.color = '#fff'; // Kolor tekstu na biały
-            }
-        }
-    </script>
-
     <div class="section" id="more-info">
         <h2>Więcej informacji o PSP</h2>
-        <p>PSP było pierwszym urządzeniem, które oferowało odtwarzanie gier w 3D na przenośnym ekranie LCD, co stanowiło ogromny przełom w porównaniu do innych przenośnych konsol dostępnych na rynku w tamtym czasie. Konsola oferowała również możliwość odtwarzania filmów, muzyki i korzystania z aplikacji multimedialnych, co czyniło ją wszechstronnym urządzeniem do rozrywki.</p>
+        <p>PSP było pierwszym urządzeniem, które oferowało odtwarzanie gier w 3D na przenośnym ekranie LCD, co stanowiło ogromny przełom w porównaniu do innych przenośnych konsol.</p>
         <p>Na PSP pojawiły się takie kultowe gry jak: <b>Gran Turismo, God of War: Chains of Olympus, Metal Gear Solid: Peace Walker</b> i wiele innych.</p>
         <a href="#review" class="button">Zobacz recenzje gier PSP</a>
     </div>
 
     <div class="section" id="review">
         <h2>Recenzje Gier PSP</h2>
-        <p>Gry na PSP oferowały szeroki wybór, od wyścigów po gry akcji, od gier przygodowych po strategie. Oto kilka naszych ulubionych tytułów:</p>
+        <p>Gry na PSP oferowały szeroki wybór, od wyścigów po gry akcji, od gier przygodowych po strategie. Oto kilka ulubionych tytułów:</p>
         <ul>
             <li><b>Gran Turismo</b> - Niezwykle realistyczna gra wyścigowa, która zaskakiwała jakością grafiki jak na konsolę przenośną.</li>
-            <li><b>God of War: Chains of Olympus</b> - Ekscytująca przygoda Kratosa w mitycznym świecie, z niesamowitym gameplayem.</li>
+            <li><b>God of War: Chains of Olympus</b> - Ekscytująca przygoda Kratosa w mitycznym świecie.</li>
             <li><b>Metal Gear Solid: Peace Walker</b> - Gra akcji z elementami stealth, która stanowiła prawdziwą perełkę na PSP.</li>
         </ul>
         <a href="#emulator" class="button">Sprawdź najlepsze emulatory PSP</a>
@@ -188,27 +51,39 @@
         <h2>Najlepsze Emulatory PSP</h2>
         <p>Jeśli chcesz grać w gry PSP na komputerze, możesz skorzystać z emulatorów, takich jak:</p>
         <ul>
-            <li><b>PPSSPP</b> - Jeden z najlepszych emulatorów PSP, oferujący doskonałą jakość grafiki i zgodność z wieloma grami.</li>
-            <li><b>JPCSP</b> - Emulator PSP napisany w Javie, który pozwala na uruchomienie gier PSP na komputerach z systemem Windows, Linux i MacOS.</li>
+            <li><b>PPSSPP</b> - Emulator oferujący doskonałą jakość grafiki i zgodność z wieloma grami.</li>
+            <li><b>JPCSP</b> - Emulator PSP napisany w Javie, który działa na Windows, Linux i MacOS.</li>
         </ul>
         <a href="https://www.ppsspp.org/" class="button" target="_blank">Pobierz PPSSPP</a>
     </div>
 
     <div class="section" id="homebrew">
         <h2>Homebrew dla PSP</h2>
-        <p>PSP, mimo że przestało być wspierane przez Sony, ma ogromną społeczność homebrew, która wciąż rozwija różne aplikacje, gry i modyfikacje. Dzięki homebrew, PSP może być wykorzystywane do wielu rzeczy, od emulacji innych konsol po tworzenie nowych gier.</p>
-        <p>Najlepsze aplikacje homebrew na PSP to m.in.:</p>
+        <p>PSP, mimo że przestało być wspierane przez Sony, ma ogromną społeczność homebrew. Dzięki homebrew, PSP może być wzbogacone o różne aplikacje, gry i modyfikacje.</p>
         <ul>
             <li><b>Custom Firmware</b> - Pozwala na uruchamianie aplikacji i gier niezależnych od oficjalnych serwisów Sony.</li>
-            <li><b>PSP Revolution</b> - Gra muzyczna typu rhythm game, inspirowana serią Dance Dance Revolution.</li>
-            <li><b>iR Shell</b> - Potężne narzędzie umożliwiające uruchamianie różnych aplikacji na PSP, w tym emulatorów.</li>
+            <li><b>PSP Revolution</b> - Gra muzyczna inspirowana serią Dance Dance Revolution.</li>
+            <li><b>iR Shell</b> - Potężne narzędzie umożliwiające uruchamianie różnych aplikacji na PSP.</li>
         </ul>
         <a href="#footer" class="button">Wróć do strony głównej</a>
     </div>
 
-    <footer>
+    <footer id="footer">
         <p>© 2025 Retro PSP Polska - Wszelkie prawa zastrzeżone | <a href="https://retro-psp.github.io" target="_blank">Strona główna</a></p>
     </footer>
+
+    <script>
+        function changeMood(mood) {
+            const body = document.body;
+            if (mood === 'positive') {
+                body.style.backgroundColor = '#2ecc71'; // Zielony kolor
+                body.style.color = '#fff';
+            } else if (mood === 'negative') {
+                body.style.backgroundColor = '#e74c3c'; // Czerwony kolor
+                body.style.color = '#fff';
+            }
+        }
+    </script>
 
 </body>
 </html>
